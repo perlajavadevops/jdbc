@@ -1,0 +1,1 @@
+CREATE TABLE customer (customer_id int DEFAULT NULL, name varchar(20) DEFAULT NULL, phone_number int DEFAULT NULL); 
