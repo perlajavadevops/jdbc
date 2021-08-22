@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -74,7 +73,7 @@ public class CustomerDAO {
 		System.out.println("deleteCustomer: Entering");
 		Connection con = DBConnection.getConnection();
 
-		String deleteQuery = "delete from cusomer where customer_id=?";
+		String deleteQuery = "delete from customer where customer_id=?";
 
 		PreparedStatement ps = con.prepareStatement(deleteQuery);
 		ps.setInt(1, customerId);
@@ -114,9 +113,12 @@ public class CustomerDAO {
 		 */
 		Customer customer = new Customer();
 		customer.setCustomerId(3);
-		customer.setName("PerlaReddy");
-		customer.setPhoneNumber("89888888");
-		demo1.updateCustomer(customer);
+		customer.setName("Siri");
+		customer.setPhoneNumber("777777777");
+		//demo1.updateCustomer(customer);
+		//demo1.deleteCustomer(3);
+		//demo1.saveCustomer(customer);
+		System.out.println(demo1.getCustomers());
 //System.out.println(demo1.getCustomers());
 	}
 }
