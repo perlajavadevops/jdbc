@@ -4,7 +4,13 @@ CREATE TABLE `emp` (
   `name` varchar(45) DEFAULT NULL,
   `salary` float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
+//ORacle
+	CREATE TABLE emp (
+   empno number DEFAULT NULL,
+      name varchar2(45) DEFAULT NULL,
+     salary number DEFAULT NULL
+   );
+========================
   CREATE TABLE `employee` (
   `empno` int NOT NULL,
   `name` varchar(45) DEFAULT NULL,
