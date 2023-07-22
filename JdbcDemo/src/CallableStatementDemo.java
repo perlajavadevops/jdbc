@@ -12,16 +12,17 @@ public class CallableStatementDemo {
 		Connection con = DriverManager.getConnection(
 				"jdbc:mysql://localhost:3306/demo", "root", "root");// connection
 		con.setAutoCommit(false);
-		String selectProcedure = "{CALL SelectAllEmployees};";
-		String insertProcedure = "{CALL InsertEmployee(?,?,?)};";
-		String deleteProcedure = "{CALL deleteEmployee(?)};";
-		String updateProcedure = "{CALL UpdateEmployee(?,?,?)};";
+		String selectProcedure = "{CALL SelectAllEmployees_employee_sp};";
+		String insertProcedure = "{CALL InsertEmployee_employee_sp(?,?,?)};";
+		String deleteProcedure = "{CALL deleteEmployee_employee_sp(?)};";
+		String updateProcedure = "{CALL UpdateEmployee_employee_sp(?,?,?)};";
 
-		CallableStatement callSt = con.prepareCall(selectProcedure);
+		CallableStatement callSt = con.prepareCall(deleteProcedure);
 		
-		/*callSt.setInt(1, 102);
-		callSt.setString(2, "PerlaReddy");
-		callSt.setFloat(3, 22222);
+		callSt.setInt(1, 103);
+		/*
+		 * callSt.setString(2, "Sai Sireesha"); callSt.setFloat(3, 40000);
+		 */
 			
 		boolean i = callSt.execute();//inserted false
 		System.out.println(i);
@@ -31,12 +32,12 @@ public class CallableStatementDemo {
 		} else {
 			System.out.println("Not Inserted");
 		}
-			*/
-		ResultSet results = callSt.executeQuery();
-		while (results.next()) {
-			System.out.println(results.getInt(1) + " : " + results.getString(2)
-					+ " : " + results.getFloat(3));
-		}
-
+		
+			
+		/*
+		 * ResultSet results = callSt.executeQuery(); while (results.next()) {
+		 * System.out.println(results.getInt(1) + " : " + results.getString(2) + " : " +
+		 * results.getFloat(3)); }
+		 */
 	}
 }

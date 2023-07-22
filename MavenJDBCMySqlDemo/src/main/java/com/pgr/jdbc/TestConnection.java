@@ -32,7 +32,7 @@ public class TestConnection {
 		String deleteQuery = "delete from emp where empno=101";
 		String updateQuery = "update emp set salary=9000 WHERE empno=102;";
 		
-		ResultSet set= st.executeQuery(selectMultipleRecordQuery);
+		ResultSet set= st.executeQuery(selectQuery);
 		while(set.next()) {
 			System.out.println(set.getInt("empno"));
 			System.out.println(set.getString(2));
