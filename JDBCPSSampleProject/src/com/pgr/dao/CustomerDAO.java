@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import com.pgr.entity.Customer;
@@ -17,8 +18,10 @@ public class CustomerDAO {
 
 		String selectQuery = "select * from customer where customer_id = ?";
 		Connection con = DBConnection.getConnection();
+		
 		PreparedStatement ps = con.prepareStatement(selectQuery);
 		ps.setInt(1, customerId);
+		
 		ResultSet set = ps.executeQuery();
 
 		Customer customer = new Customer();
@@ -103,22 +106,30 @@ public class CustomerDAO {
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
 
 		CustomerDAO demo1 = new CustomerDAO();
+		
+		
 		/*
 		 * String custId = args[0]; Integer intId = Integer.parseInt(custId);
 		 * System.out.println(demo1.getCustomerById(intId));
-		 * 
+		 */
+		
+		/*
 		 * List<Customer> list = demo1.getCustomers(); Iterator<Customer> itr =
 		 * list.iterator(); while (itr.hasNext()) { Customer customer = (Customer)
 		 * itr.next(); System.out.println(customer); }
 		 */
+
+		
+		
 		Customer customer = new Customer();
-		customer.setCustomerId(3);
-		customer.setName("Siri");
-		customer.setPhoneNumber("777777777");
+		customer.setCustomerId(2);
+		customer.setName("Dhatrika");
+		customer.setPhoneNumber("800000000");
+		 
 		//demo1.updateCustomer(customer);
-		//demo1.deleteCustomer(3);
+		demo1.deleteCustomer(2);
 		//demo1.saveCustomer(customer);
-		System.out.println(demo1.getCustomers());
+		//System.out.println(demo1.getCustomers());
 //System.out.println(demo1.getCustomers());
 	}
 }

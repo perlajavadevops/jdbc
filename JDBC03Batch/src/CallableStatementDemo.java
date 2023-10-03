@@ -18,7 +18,7 @@ public class CallableStatementDemo {
 
 		CallableStatement callSt = con.prepareCall(insertProcedure);
 		
-		callSt.setInt(1, 103);
+		callSt.setInt(1, 112);
 		callSt.setString(2, "Perla");
 		callSt.setInt(3, 40030);
 			

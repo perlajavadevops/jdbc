@@ -59,7 +59,7 @@ public class CityDAO {
 	public City getCityDetails(int city_id) throws ClassNotFoundException, SQLException {
 		System.out.println("getting city details by city_id: Entry");
 		Connection connection = DBConnection.getConnection();
-		String detailQuery = "select * from city where city_id=?";
+		String detailQuery = "select * from city where id=?";
 		PreparedStatement ps = connection.prepareStatement(detailQuery);
 		ps.setInt(1, city_id);
 
@@ -130,13 +130,13 @@ public class CityDAO {
 
 		// getting all city details.....
 
-		List<City> list = cityDAO.citydetails();
-		Iterator<City> itr = list.iterator();
-
-		while (itr.hasNext()) {
-			City getcityDetails = (City) itr.next();
-			System.out.println(getcityDetails);
-		}
+		/*
+		 * List<City> list = cityDAO.citydetails(); Iterator<City> itr =
+		 * list.iterator();
+		 * 
+		 * while (itr.hasNext()) { City getcityDetails = (City) itr.next();
+		 * System.out.println(getcityDetails); }
+		 */
 	}
 
 }
